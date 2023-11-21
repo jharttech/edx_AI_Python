@@ -1,4 +1,8 @@
 import sys
+
+#Note: THIS FILE WILL HAVE ERRORS AS IT IS A TEMPLATE
+
+
 #Frontier
 class StackStyleFrontier():
     def __init__(self):
@@ -48,20 +52,23 @@ class Node():
         self.parent = parent
         self.action = action
 
-class Main(self):
+#GENERAL FUNCTIONS NEEDED 
     #Intialize frontier to starting postion
-    def starting_pos(self):
-        start = Node(state=self.start, parent=None, action=None)
-        frontier = StackStyleFrontier()
-        frontier.add(start)
+def starting_pos(self):
+    start = Node(state=self.start, parent=None, action=None)
+    frontier = StackStyleFrontier()
+    frontier.add(start)
 
-    #Explored set
-    self.explored = set() 
+#Explored set
+def explored_nodes():
+    explored = set() 
 
-    #Path cost
-    self.num_explored = 0
+#Path cost
+def path_cost()
+    num_explored = 0
     
     #Repeat until solution found
+def repeat_loop():
     while True:
         #if nothing left in frontier, then no path
         if frontier.empty():
@@ -69,10 +76,10 @@ class Main(self):
 
         #Choose a node from the frontier
         node = frontier.remove()
-        self.num_explored += 1
+        num_explored += 1
 
         #Is node the goal, is so then solution
-        if node.state == self.goal:
+        if node.state == goal:
             actions = []
             cells = []
 
@@ -83,12 +90,12 @@ class Main(self):
                 node = node.parent
             actions.reverse()
             cells.reverse()
-            self.solution = (actions, cells)
+            solution = (actions, cells)
             return
         
         #Mark node as explored
-        self.explored.add(node.state)
-
+        explored.add(node.state)
+        
         #Add neighbor nodes to frontier
         for action, state in self.neightbors(node.state):
             if not frontier.contains_state(state) and state not in self.explored:
