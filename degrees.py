@@ -64,7 +64,7 @@ def explored_nodes():
     explored = set() 
 
 #Path cost
-def path_cost()
+def path_cost():
     num_explored = 0
     
     #Repeat until solution found
